@@ -204,8 +204,10 @@ class BenchmarkObject (BaseBenchmarkObject):
 				
 				# Update the score with the result of the current goal
 				self.score["goal_%i" % i]['detected'] = True
-				self.score["goal_%i" % i]['recognized'] = recognized
-				self.score["goal_%i" % i]['position_error'] = position_error
+				self.score["goal_%i" % i]['robot-estimated person name'] = result['person_name']
+				self.score["goal_%i" % i]['ground-truth person name'] = person
+				self.score["goal_%i" % i]['person_recognized'] = recognized
+				self.score["goal_%i" % i]['person_position_error'] = position_error
 				self.score["goal_%i" % i]['ground-truth person position'] = '(%.2f, %.2f)' % (person_pose_mocap.x, person_pose_mocap.y)
 				self.score["goal_%i" % i]['robot-estimated person position'] = '(%.2f, %.2f)' % (result_person_pose.x, result_person_pose.y)
 
